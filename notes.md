@@ -101,4 +101,434 @@ val=person.getBirthYear()
 
 =====================================================
 **Dates and Times**
+const birthday=new Date('Dec 12 2022')
+const today=new Date() //will give today
+
+val=today.getMonth()
+
+birthday.setMonth(2)
+birthday.setDate(12)
+
+=====================================================
+**If else**
+if (id===100){
+    console.log('Correct')
+} else {
+    console.log('incorrect')
+}
+
+**Ternary Operator**
+condition?true_value:false_value
+age<12?console.log('he is teenage'):console.log('He is adult')
+alternatively, console.log(id === 100 ? 'CORRECT':'INCORRECT')
+
+and is && e.g. if (age>12 && age <19)
+or is || e.g. if (age >12 || age >90)
+
+=====================================================
+**Switches**
+Case statement
+
+switch(color){
+    case 'red':
+     console.log('color is red')
+     break
+    case 'blue':
+     console.log('color is blue')
+    default:
+     console.log('Color is neither blue or red')
+     break
+}
+
+Another example : inside the condition you can put functions/objects
+
+let day
+
+switch(new Date().getDay()){
+    case 0:
+     day = 'Sunday'
+     break
+}
+
+=====================================================
+**Functions**
+**Function Declaration**
+function greet(firstName='John', lastName='Doe'){
+    return `Hello ${firstName} ${lastName}`
+}
+
+console.log(greet())
+console.log(greet('James','Bowden'))
+console.log(greet(firstName='John',lastName='Bowden'))
+
+**Function Expression**
+assign the function definition to a variable
+const square = function(x=3){
+    return x*x
+}
+
+console.log (square())
+
+*FE better than FD for closure and hoisting*
+
+**IIFE**
+define lambda function and call it in one go,
+so variable declaration/private methods inside scope
+like namedtuple rather than full blown class
+will revisit in module pattern (calorie counter)
+
+(function(){
+    console.log('IIFE Ran')
+})()
+
+Alternatively,
+(()=>console.log('IIFE Ran'))()
+
+another example with parameters:
+((firstName,lastName)=>`Hello ${firstName} ${lastName}`)(firstName='medusa',lastName='oblongata')
+
+=====================================================
+**Loops**
+array=[10,20]
+for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    console.log(element);
+
+    if (i == 3) {
+        console.log('3 is my favourite number')
+        continue //how to carry on 
+    }
+
+    if (i == 5) {
+        console.log('Stop the loop')
+        break //how to exit the loop
+    }
+
+*array iterator(for each)*
+const cars=['Ford','Chevy','Honda']
+cars.forEach(function (car) {
+    console.log(car)})
+
+Alternatively,
+const cars=['Ford','Chevy','Honda']
+cars.forEach(car=>console.log(car))
+
+
+*object literal iterator (for in)*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
