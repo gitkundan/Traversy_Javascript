@@ -1,8 +1,7 @@
 **python** kind of methods like len type are not built-in
 they are methods/properties of datatypes
-e.g. val=7
+e.g. val='london'
 val.length
-
 
 **However** there are few built-ins :
 typeof val
