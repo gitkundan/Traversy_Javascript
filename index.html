@@ -1,14 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Site</title>
-</head>
-<body>
-    <h1>Javascript sandbox</h1>
+    <link rel="stylesheet" href="./style4.css">
     <script src="./app.js"></script>
-    
+    <script src="./main4.js" defer="defer"></script>
+    <script language="JavaScript" type="text/javascript">
+        function getUS() {
+            var s = "";
+            var userLang = (navigator.language) ? navigator.language : navigator.userLanguage;
+            if (userLang.toLowerCase() == "en-us") {
+                s = ' and <a href="core-index.html">Common Core Standards</a>';
+            }
+            document.write(s);
+        }
+    </script>
+</head>
+
+<body id="bodybg">
+    <div id="stt"></div>
+    <div id="adTop"></div>
+    <header>
+        <div id="hdr"></div>
+        <div id="tran"></div>
+        <div id="adHide"></div>
+        <div id="cookOK"></div>
+    </header>
+
+    <div class="mid">
+
+        <nav>
+            <div id="menuWide" class="menu"></div>
+            <div id="logo"><a href="https://www.mathsisfun.com/"><img src="../images/style/logo.svg"
+                        alt="Math is Fun"></a></div>
+
+            <div id="search" role="search"></div>
+            <div id="linkto"></div>
+
+            <div id="menuSlim" class="menu"></div>
+            <div id="menuTiny" class="menu"></div>
+        </nav>
+
+        <div id="extra"></div>
+
+        <article id="content" role="main">
+
+            <!-- #BeginEditable "Body" -->
+
+
+            <h1 class="center">Index by Year and Subject</h1>
+
+            <p class="center">Also see our <a href="index-curriculum.html">Curriculum</a>
+                <script>getUS();</script>
+            </p>
+
+            <div class="centerfull">
+                <div class="col">
+                    <div class="colhead">Pre-K to 2</div>
+
+                    <div class="button" onclick="location.href='a-kto2-numbers.html';"
+                        style="cursor: pointer; background-color: #fafad2;"> <a href="a-kto2-numbers.html">Numbers</a>
+                    </div>
+                    <div class="button" onclick="location.href='a-kto2-algebra.html';"
+                        style="cursor: pointer; background-color: #E6E6FA;"> <a href="a-kto2-algebra.html">Algebra</a>
+                    </div>
+                    <div class="button" onclick="location.href='a-kto2-geometry.html';"
+                        style="cursor: pointer; background-color: #AFEEEE;"> <a href="a-kto2-geometry.html">Geometry</a>
+                    </div>
+                    <div class="button" onclick="location.href='a-kto2-data.html';"
+                        style="cursor: pointer; background-color: #CCCCFF;"> <a href="a-kto2-data.html">Data</a></div>
+                    <div class="button" onclick="location.href='a-kto2-measurement.html';"
+                        style="cursor: pointer; background-color: #7FFFD4;"> <a
+                            href="a-kto2-measurement.html">Measurement</a></div>
+                    <div class="button" onclick="location.href='a-kto2-money.html';"
+                        style="cursor: pointer; background-color: #00BFFF;"> <a href="a-kto2-money.html">Money</a></div>
+
+                </div>
+                <div class="col">
+                    <div class="colhead">3 to 6</div>
+
+
+                    <div class="button" onclick="location.href='b-3to6-numbers.html';"
+                        style="cursor: pointer; background-color: #fafad2;"> <a href="b-3to6-numbers.html">Numbers</a>
+                    </div>
+                    <div class="button" onclick="location.href='b-3to6-algebra.html';"
+                        style="cursor: pointer; background-color: #E6E6FA;"> <a href="b-3to6-algebra.html">Algebra</a>
+                    </div>
+                    <div class="button" onclick="location.href='b-3to6-geometry.html';"
+                        style="cursor: pointer; background-color: #AFEEEE;"> <a href="b-3to6-geometry.html">Geometry</a>
+                    </div>
+                    <div class="button" onclick="location.href='b-3to6-data.html';"
+                        style="cursor: pointer; background-color: #CCCCFF;"> <a href="b-3to6-data.html">Data</a></div>
+                    <div class="button" onclick="location.href='b-3to6-measurement.html';"
+                        style="cursor: pointer; background-color: #7FFFD4;"> <a
+                            href="b-3to6-measurement.html">Measurement</a></div>
+                    <div class="button" onclick="location.href='b-3to6-money.html';"
+                        style="cursor: pointer; background-color: #00BFFF;"> <a href="b-3to6-money.html">Money</a></div>
+
+
+                </div>
+                <div class="col">
+                    <div class="colhead">7 to 9</div>
+
+
+                    <div class="button" onclick="location.href='c-7to9-numbers.html';"
+                        style="cursor: pointer; background-color: #fafad2;"> <a href="c-7to9-numbers.html">Numbers</a>
+                    </div>
+                    <div class="button" onclick="location.href='c-7to9-algebra.html';"
+                        style="cursor: pointer; background-color: #E6E6FA;"> <a href="c-7to9-algebra.html">Algebra</a>
+                    </div>
+                    <div class="button" onclick="location.href='c-7to9-geometry.html';"
+                        style="cursor: pointer; background-color: #AFEEEE;"> <a href="c-7to9-geometry.html">Geometry</a>
+                    </div>
+                    <div class="button" onclick="location.href='c-7to9-data.html';"
+                        style="cursor: pointer; background-color: #CCCCFF;"> <a href="c-7to9-data.html">Data</a></div>
+                    <div class="button" onclick="location.href='c-7to9-measurement.html';"
+                        style="cursor: pointer; background-color: #7FFFD4;"> <a
+                            href="c-7to9-measurement.html">Measurement</a></div>
+                    <div class="button" onclick="location.href='c-7to9-money.html';"
+                        style="cursor: pointer; background-color: #00BFFF;"> <a href="c-7to9-money.html">Money</a></div>
+
+                </div>
+                <div class="col">
+                    <div class="colhead">10 upwards</div>
+
+
+                    <div class="button" onclick="location.href='d-10up-numbers.html';"
+                        style="cursor: pointer; background-color: #fafad2;"> <a href="d-10up-numbers.html">Numbers</a>
+                    </div>
+                    <div class="button" onclick="location.href='d-10up-algebra.html';"
+                        style="cursor: pointer; background-color: #E6E6FA;"> <a href="d-10up-algebra.html">Algebra</a>
+                    </div>
+                    <div class="button" onclick="location.href='d-10up-geometry.html';"
+                        style="cursor: pointer; background-color: #AFEEEE;"> <a href="d-10up-geometry.html">Geometry</a>
+                    </div>
+                    <div class="button" onclick="location.href='d-10up-data.html';"
+                        style="cursor: pointer; background-color: #CCCCFF;"> <a href="d-10up-data.html">Data</a></div>
+                    <div class="button" onclick="location.href='d-10up-measurement.html';"
+                        style="cursor: pointer; background-color: #7FFFD4;"> <a
+                            href="d-10up-measurement.html">Measurement</a></div>
+
+
+                    <div class="button" onclick="location.href='d-10up-calculus.html';"
+                        style="cursor: pointer; background-color: #00ffff;"> <a href="d-10up-calculus.html">Calculus</a>
+                    </div>
+
+                </div>
+
+            </div>
+            <p>&nbsp;</p>
+            <p class="center">And the <a href="../definitions/index.html">Illustrated Math Dictionary</a>, <a
+                    href="../worksheets/index.php">Worksheets</a>, <a href="../games/index.html">Games</a>, <a
+                    href="../puzzles/index.html">Puzzles</a> and <a
+                    href="https://www.mathisfunforum.com/index.php">Forum</a>.</p>
+            <p class="center">&nbsp;</p>
+            <!-- #EndEditable -->
+
+        </article>
+
+        <div id="adend" class="centerfull noprint"></div>
+        <footer id="footer" class="centerfull noprint"></footer>
+        <div id="copyrt">Copyright © 2021 MathsIsFun.com</div>
+
+    </div>
 </body>
+
 </html>

@@ -22,9 +22,6 @@ Date constructor : date=new Date() --> creates date object
 pythonic differences : use backticks and ${variable_name} syntax
 like python lets you do functions and conditionals inser {}
 ${hello()}
-${age>30?'Over 30':'Under 30'}
-
-
 
 const name='John'
 const age = 30
@@ -42,9 +39,14 @@ data = `
 
 `
 document.body.innerHTML=data
+=====================================================
+**Ternary Operator / Conditional Expression**
+data=${age>30?"Over 30":"Under 30"}
+console.log(data)
 
 =====================================================
 **Array and array methods i.e. list methods**
+
 constructors : both of these will work
 const numbers = [5,45]
 const numbers2 = new Array(3,4)
