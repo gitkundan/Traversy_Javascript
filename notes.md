@@ -1,3 +1,5 @@
+<!-- code : https://github.com/PacktPublishing/Modern-JavaScript-From-The-Beginning/blob/master/V11411_Code%20File/S03/3-4-project-files.zip -->
+
 **python** kind of methods like len type are not built-in
 they are methods/properties of datatypes
 e.g. val='london'
@@ -532,4 +534,22 @@ cars.forEach(car=>console.log(car))
 
 
 
+
+
+=====================================================
+**Document Selector**
+document.querySelector ==> returns the target node
+item=document.querySelector('.black') ==> selects FIRST element from class black
+item=document.querySelector('#213') ==> selects FIRST element with id as 213
+item=document.querySelector('h5') ==> selects FIRST element with tag as h5
+. for selecting by class
+# for selecting by id
+
+
+document.querySelectorAll ==> returns nodelist (not HTMLCollection)
+
+Others:
+document.getlementbyId() ==> returns the html element
+document.getelementbyClass()
+document.getelementbyTag()
 
