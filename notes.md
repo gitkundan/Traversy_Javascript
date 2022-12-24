@@ -1,5 +1,28 @@
 <!-- code : https://github.com/PacktPublishing/Modern-JavaScript-From-The-Beginning/blob/master/V11411_Code%20File/S03/3-4-project-files.zip -->
 
+<!-- https://github.com/PacktPublishing/Modern-JavaScript-From-The-Beginning/blob/master/V11411_Code%20File/S03/3-4-project-files.zip -->
+
+Use the following html template
+```html
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/skeleton.css" />
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+```
+
 **python** kind of methods like len type are not built-in
 they are methods/properties of datatypes
 e.g. val='london'
@@ -8,6 +31,13 @@ val.length
 **However** there are few built-ins :
 typeof val
 String(val)
+
+**Getting help**
+like python dir() JS has console.dir
+e.g.
+console.dir(window)
+console.dir(window.console)
+console.dir(window.sayHello) 
 
 **To complicate further - Casting** 
 =====================================================
@@ -223,28 +253,196 @@ cars.forEach(car=>console.log(car))
 
 
 
+=====================================================
+**OOP**
+```javascript
+function Person(name){
+    this.name=name
+    this.location='London'
+    console.log(this); //produces the object for the currently instantiated object
+}
+
+const brad = new Person('brad')
+```
+
+the above function is object constructor for Person() class ==> ES6 class is syntactic sugar for the above function
+
+```javascript
+console.log(this); //this is in global scope
+```
+will result in window object
+
+
+ES6 class is syntactic sugar for constructor function : Class keyword started from ES6.
+```javascript
+class Person{
+    constructor(firstName,lastName) {
+        this.firstName=firstName
+        this.lastName=lastName
+    }
+
+    greeting() {
+        return `Hello there ${this.firstName} ${this.lastName}`
+    }
+
+    //static methods dont need anything from class
+    static addNumbers(x,y){
+        return x+y
+    }
+}
+
+const mary = new Person('Mary','Shelley');
+console.log(mary.greeting());
+
+//to use static method directly use from class
+console.log(Person.addNumbers(1,2));
+```
+
+## Inheritance
+use extends....
+```javascript
+//base class
+class Person {
+    constructor(firstName, lastName) {
+        this.firstName = firstName
+        this.lastName = lastName
+    }
+
+    greeting() {
+        return `Hello there ${this.firstName} ${this.lastName}`
+    }
+}
+
+
+//child class
+class Employee extends Person {
+    constructor(firstName, lastName, id) {
+        super(firstName, lastName) //call the parent class constructor
+        this.id = id
+    }
+
+    //method overriden
+    greeting() {
+        return `Hello there, ${this.firstName} ${this.lastName}. Your id is ${this.id}`
+    }
+}
+const paru = new Employee('Paru', 'Chawla', 34)
+console.log(paru.greeting());
+```
+
+**Book List Example App**
+div for each UI element
+label and input tags under the same div
+use skeleton css
 
 
 
+**Asynchronous**
+XHR and Fetch are browser API
 
+XHR: older browser API
+Fetch : modern browser API
+Axios : Third party library
 
+```javascript
+//XHR way
+const urlCategories = "https://api.chucknorris.io/jokes/random?category=";
 
+document.querySelector(".get-jokes").addEventListener("click", getJokes);
 
+function getJokes(e) {
+  //Create a XHR object, similar to creating a session object
+  e.preventDefault();
 
+  const genre = document.getElementById("genre").value;
 
+  xhr = new XMLHttpRequest();
+  url = `${urlCategories}${genre}`;
+  //make a GET request : third parameter is IfAsync?
+  xhr.open("GET", url, true);
+  xhr.onload = function () {
 
+    // Check http status
+    if (this.status == 200) {
+      const joke = JSON.parse(this.responseText);
+      console.log(joke.value);
+      const output = `
+      <ul>
+        <li>${joke.value}</li>
+      </ul>
+      `;
+      document.querySelector(".output").innerHTML = output;
+    }
+  };
+  xhr.send();
+}
 
+```
+=====================================================
+**Fetch API**
 
+const url='https://api.github.com/users/deekshasharma'
+// test = fetch(url) // comes back not with data but with promise
 
+// what is promise
+// promise has a state(pending,fullfilled) and a response object and can be chained to .then
+//fetch uses async pattern to get a response object
+//bonsailabs has good tutorials
+//then also returns a promise not actual data
+//so you have to use another .then in chain to retrieve data
+fetch(url)
+  .then(response => response.json())
+  .then(jsonData=>console.log(jsonData))
+// console.log(test);
 
+*similar to pandas method chaining / powershell pipeline; where the left function's result gets passed to right function as argument. async-await is syntactic sugar on promise; makes code easy to read as-if synchronous code*
 
+=====================================================
+**async-await**
 
+```javascript
 
+async function getUsers() {
+  url='https://jsonplaceholder.typicode.com/users/1'
 
+  //get a promise
+  const response = await fetch(url)
 
+  //only proceed once the promise is resolved
+  // data is promise
+  const data = await response.json()
 
+  // only proceed once second promise is resolved
+  return data
 
+}
 
+// chain the return value of function with .then to process the results
+getUsers().then(users=>console.log(users))
+
+//pattern is 1 async keyword before function and then 2 await inside function and .then in the calling code to handle the promise
+
+//async-await function returns promise NOT data
+```
+
+=====================================================
+**Arrow function**
+```javascript
+
+//one line return with no parameter
+sayHello=()=> 'Hello'
+
+//one line return with one parameter
+sayHello=name=>`Hello ${name}`
+console.log(sayHello('John'));
+```
+
+=====================================================
+**TBD**
+```javascript
+TBD
+
+```
 
 
 
@@ -537,6 +735,12 @@ cars.forEach(car=>console.log(car))
 
 
 =====================================================
+*DOM Manipulation*
+**Document Traversal**
+
+console.dir(document.body) will give the body hierarchy that contains both childNodes (NodeList) and children (HTML Collection). Nodelist will include comment, text i.e. non HTML as they are also valid nodes. However since we need to get only html elements we will only deal with children
+
+
 **Document Selector**
 document.querySelector ==> returns the target node
 item=document.querySelector('.black') ==> selects FIRST element from class black
@@ -553,3 +757,32 @@ document.getlementbyId() ==> returns the html element
 document.getelementbyClass()
 document.getelementbyTag()
 
+
+**Changing style**
+
+If the text between html tags need changing use innerText:
+    document.querySelector('h1').innerText='Good Day'
+
+If the enclosing tags i.e. whole html needs changing use innerHTML
+    document.querySelector('h1').innerHTML='<h3> Good Day </h3>'
+
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function toggleDisplay(){
+        let p = document.getElementById("magic");
+        if(p.style.display === "none") {
+          p.style.display = "block";
+        } else {
+          p.style.display = "none";
+        }
+      }
+    </script>
+    <p id="magic">I might disappear and appear.</p>
+    <button onclick="toggleDisplay()">Magic!</button>
+  </body>
+</html>
+```
